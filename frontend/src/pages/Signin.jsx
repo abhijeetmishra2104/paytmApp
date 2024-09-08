@@ -37,7 +37,7 @@ export function Signin(){
         <Input onChange={(e)=> {
             setUsername(e.target.value)
         }} data={"username"}/>
-        <Input onChange={(e)=> {
+        <Input type="password" onChange={(e)=> {
             setPassword(e.target.value)
         }} data={"password"}/>
         <div className="pl-4"><button  onClick={Login} className="bg-[#201E43] hover:bg-[#508C9B] text-[#EEEEEE] font-bold py-2 px-4 border border rounded w-72">

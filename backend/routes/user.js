@@ -27,7 +27,11 @@ router.post("/signup", async (req, res) => {
         username: req.body.username
     })
 
+    
+
+
     if (existingUser) {
+        
         return res.status(411).json({
             message: "Email already taken/Incorrect inputs"
         })
@@ -45,6 +49,7 @@ router.post("/signup", async (req, res) => {
         userId,
         balance: 1 + Math.random() * 10000
     })
+    const name = user.firstName;
 
     const token = jwt.sign({
         userId
@@ -52,7 +57,8 @@ router.post("/signup", async (req, res) => {
 
     res.json({
         message: "User created successfully",
-        token: token
+        token: token,
+        name: name,
     })
 })
 

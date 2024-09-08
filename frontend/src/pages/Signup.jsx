@@ -25,6 +25,7 @@ export function Signup() {
       
       if (response.data && response.data.token) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("name", response.data.name);
         console.log("Token saved to local storage");
         setFirstname("");
     setLastname('');
